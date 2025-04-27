@@ -1,31 +1,55 @@
-// src/components/MobileMenu.jsx
-import React from "react";
-import styles from "../styles/MobileMenu.module.css";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import styles from "../styles/MobileMenu.module.css";
 
-const MobileMenu = ({ closeMenu }) => {
+const MobileMenu = ({ closeMenu, toggleTheme, currentTheme }) => {
+  const [closing, setClosing] = useState(false);
+
+  const handleClose = () => {
+    setClosing(true);
+  };
+
+  useEffect(() => {
+    if (closing) {
+      const timeout = setTimeout(() => {
+        closeMenu();
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [closing, closeMenu]);
+
+  // Aqui verificamos se o tema é "dark"
+  const isDark = currentTheme === "dark";
+
   return (
-
     <>
-    <div className={styles.overlay} onClick={closeMenu}></div>
+      <div className={styles.overlay} onClick={handleClose}></div>
 
-    <div className={styles.mobileMenu}>
-      <button className={styles.closeButton} onClick={closeMenu}>
-        &times;
-      </button>
+      <nav className={`${styles.mobileMenu} ${closing ? styles.slideOut : ""} ${isDark ? styles.darkMenu : ""}`}>
+        <button className={styles.closeButton} onClick={handleClose} aria-label="Fechar menu">
+          &times;
+        </button>
 
-      <ul className={styles.navLinks}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/sobre">Sobre</Link></li>
-        <li><Link to="/contacto">Contato</Link></li>
-      </ul>
+        <div className={styles.navLinks}>
+          <Link to="/" onClick={handleClose} className={styles.navLink}>Home</Link>
+          <Link to="/sobre" onClick={handleClose} className={styles.navLink}>Sobre</Link>
+          <Link to="/contacto" onClick={handleClose} className={styles.navLink}>Contato</Link>
+        </div>
 
-      <div className={styles.menuCtas}>
-        <a href="#" className={styles.login} onClick={closeMenu}>Login</a>
-        <a href="#" className={styles.signup} onClick={closeMenu}>Cadastrar-se</a>
-      </div>
-    </div>
+        {/* Botão para alternar tema */}
+        <button
+          onClick={toggleTheme}
+          className={styles.themeToggle}
+          aria-label={`Mudar para tema ${currentTheme === "light" ? "escuro" : "claro"}`}
+        >
+          {currentTheme === "light" ? "🌙" : "☀️"}
+        </button>
 
+        <div className={styles.menuCtas}>
+          <Link to="/login" onClick={handleClose} className={styles.login}>Login</Link>
+          <Link to="/cadastro" onClick={handleClose} className={styles.signup}>Cadastrar-se</Link>
+        </div>
+      </nav>
     </>
   );
 };
