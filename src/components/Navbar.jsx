@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import MobileMenu from "./MobileMenu"; 
-import styles from "../styles/Navbar.module.css" 
+import styles from "../styles/Navbar.module.css"
+import logo from '../img/logo.png' 
 
 const Navbar = ({ toggleTheme, currentTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,20 +20,22 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
       <nav className={`${styles.navbar} ${currentTheme === 'dark' ? styles.dark : ''}`}>
         {/* Logo à esquerda */}
         <div className={styles.logo}>
-          <Link to="/">Logo</Link>
+          <img src={logo} alt="Logo" />
         </div>
 
         {/* Links centralizados */}
         <div className={`${styles.navCenter} ${menuOpen ? styles.mobileHide : ''}`}>
           <ul className={styles.navLinks}>
             <li>
-              <Link to="/" onClick={closeMenu} className={styles.navLink}>Home</Link>
+              <NavLink to="/" aria-label="Ir para a página Home" onClick={closeMenu} className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink }> Home </NavLink>
             </li>
+            
             <li>
-              <Link to="/sobre" onClick={closeMenu} className={styles.navLink}>Sobre</Link>
+              <NavLink to="/sobre" aria-label="Ir para a página Sobre" onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Sobre</NavLink>
             </li>
+            
             <li>
-              <Link to="/contacto" onClick={closeMenu} className={styles.navLink}>Contato</Link>
+              <NavLink to="/contacto" onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contato</NavLink>
             </li>
           </ul>
         </div>
@@ -41,8 +44,8 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
         <div className={`${styles.navRight} ${menuOpen ? styles.mobileHide : ''}`}>
           <div className={styles.ctas}>
             <div className={styles.desktopCtas}>
-              <Link to="" className={styles.login}>Login</Link>
-              <Link to="" className={styles.signup}>Cadastrar-se</Link>
+              <NavLink to="" className={styles.login}>Login</NavLink>
+              <NavLink to="" className={styles.signup}>Cadastrar-se</NavLink>
             </div>
             <button 
               onClick={toggleTheme} 

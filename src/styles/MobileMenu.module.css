@@ -73,6 +73,7 @@
   margin-top: auto;
 }
 
+
 .login, .signup {
   text-align: center;
   padding: 0.8rem;
@@ -81,13 +82,13 @@
   text-decoration: none;
 }
 
-/* Botão Login */
+
 .login {
   color: #007bff;
   border: 1px solid #007bff;
 }
 
-/* Botão Cadastro */
+
 .signup {
   background-color: #007bff;
   color: white;
@@ -129,4 +130,8 @@
 .dark .themeToggle:hover {
   background-color: #90cdf4;
   color: #2a2a2a;
+}
+
+.darkMenu .signup, .darkMenu .login {
+  color: white;
 }

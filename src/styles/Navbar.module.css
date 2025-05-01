@@ -1,6 +1,7 @@
 /* Navbar */
 .navbar {
   position: fixed;
+  height: 7vh;
   top: 0;
   left: 0;
   right: 0;
@@ -9,13 +10,13 @@
   align-items: center;
   padding: 1rem 2rem;
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
 /* Logo */
 .logo {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
   z-index: 1001;
@@ -53,19 +54,52 @@
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  gap: 1rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s linear;
+}
+
+.desktopCtas{
+  display: flex;
+  gap: 0.7rem;
 }
 
 .login {
   color: #007bff;
   border: 1px solid #007bff;
+
+}
+
+.login:hover{
+  background-color: green;
+  color: white;
+  border: 1px solid white;
+  transform: scale(1.15);
 }
 
 .signup {
   background-color: #007bff;
   color: white;
 }
+
+.signup:hover{
+  background-color: green;
+  transform: scale(1.1);
+  }
+
+
+.active {
+    color: #007bff;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+}
+
+.logo img {
+  display: flex;
+  width: 100px; 
+  height: auto;
+  border-radius: 50px;
+    
+}
+
 
 /* Botão de tema */
 .themeToggle {
@@ -113,7 +147,7 @@
   gap: 2rem;
   z-index: 1000;
   transform: translateY(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .mobileMenu .navLink {
@@ -153,6 +187,7 @@
 /* Dark Mode */
 .dark {
   background-color: #2a2a2a;
+  box-shadow: 0 4px 8px rgba(252, 250, 250, 0.518); /* Sombra */
 }
 
 .dark .logo,
@@ -201,17 +236,22 @@
 
 /* Transição suave */
 .hamburgerLine {
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .dark .login{
   color: white;
 }
 .dark .login:hover{
-  background-color: #007bff;
+  background-color: green;
   color: white;
 }
 
 .dark .signup{
   color: white;
+}
+
+.dark .signup:hover{
+  color: white;
+  border: 1px solid white;
 }
