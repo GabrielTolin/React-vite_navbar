@@ -1,0 +1,63 @@
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .forms {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 2rem;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+  
+  .contactForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .formGroup label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .submitBtn {
+    padding: 0.7rem 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+  }
+  
+  .submitBtn:hover {
+    background-color: green;
+    scale: 1.05;
+  }
+  

@@ -11,7 +11,7 @@
   padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 10001;
 }
 
 /* Logo */
@@ -254,4 +254,32 @@
 .dark .signup:hover{
   color: white;
   border: 1px solid white;
+}
+
+
+/*Botões de idioma*/
+
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.languageSwitcher button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.languageSwitcher button:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.languageSwitcher img {
+  width: 24px;
+  height: auto;
 }
