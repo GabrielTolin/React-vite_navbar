@@ -83,6 +83,7 @@
 .signup:hover{
   background-color: green;
   transform: scale(1.1);
+  color: white;
   }
 
 
