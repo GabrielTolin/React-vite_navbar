@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "private": true,
-  "homepage": "https://gabrieltolin.github.io/navbar-react",
+  "homepage": "https://github.com/GabrielTolin/React-vite_navbar.git",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
