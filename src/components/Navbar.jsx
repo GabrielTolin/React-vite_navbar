@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import MobileMenu from "./MobileMenu"; 
-import styles from "../styles/Navbar.module.css"
-import logo from '../img/logo.png'
+import styles from "../styles/Navbar.module.css";
+import logo from '../img/logo.png';
 import i18n from '../i18n';
 import ptFlag from '../img/pt.svg';
 import gbFlag from '../img/gb.svg';
@@ -16,11 +16,11 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
   const { t } = useTranslation();
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Alterna o estado do menu
+    setMenuOpen(!menuOpen); 
   };
 
   const closeMenu = () => {
-    setMenuOpen(false); // Fecha o menu
+    setMenuOpen(false); 
   };
 
   

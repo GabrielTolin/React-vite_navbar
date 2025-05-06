@@ -138,6 +138,10 @@
   color: white;
 }
 
+.darkMenu .navLink{
+  color: white;
+}
+
 /*Botões de idioma*/
 
 .languageSwitcher {

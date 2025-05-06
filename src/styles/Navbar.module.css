@@ -105,7 +105,7 @@
 /* Botão de tema */
 .themeToggle {
   background: transparent;
-  border: none;
+  border: transparent;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -194,7 +194,7 @@
 .dark .logo,
 .dark .navLink,
 .dark .hamburgerLine {
-  color: #f0f0f0;
+  color: #f0f0f0 !important;
 }
 
 .dark .navLink:hover {
@@ -264,6 +264,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
 }
 
 .languageSwitcher button {
@@ -283,4 +284,5 @@
 .languageSwitcher img {
   width: 24px;
   height: auto;
+  background-color: none;
 }
