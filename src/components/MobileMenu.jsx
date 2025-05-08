@@ -23,7 +23,6 @@ const MobileMenu = ({ closeMenu, toggleTheme, currentTheme }) => {
     }
   }, [closing, closeMenu]);
 
-  // Aqui verificamos se o tema é "dark"
   const isDark = currentTheme === "dark";
 
   return (
@@ -31,9 +30,7 @@ const MobileMenu = ({ closeMenu, toggleTheme, currentTheme }) => {
       <div className={styles.overlay} onClick={handleClose}></div>
 
       <nav className={`${styles.mobileMenu} ${closing ? styles.slideOut : ""} ${isDark ? styles.darkMenu : ""}`}>
-        <button className={styles.closeButton} onClick={handleClose} aria-label="Fechar menu">
-          &times;
-        </button>
+        
 
         <div className={styles.navLinks}>
           <Link to="/" onClick={handleClose} className={styles.navLink}>{t("home")}</Link>
