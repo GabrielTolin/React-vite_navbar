@@ -32,7 +32,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
         {/* Logo à esquerda */}
         <div className={styles.logo}>
           <NavLink to="/" aria-label="Ir para a página Inicial">
-            <img src={logo} alt="Logo" />
+           <!-- <img src={logo} alt="Logo" />-->
           </NavLink>
         </div>
 
@@ -69,10 +69,10 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
             </button>
             <div className={styles.languageSwitcher}>
               <button onClick={() => i18n.changeLanguage('pt')} aria-label="Mudar para português">
-                <img src={ptFlag} alt="Português" width="24" />
+               <!-- <img src={ptFlag} alt="Português" width="24" /> -->
               </button>
               <button onClick={() => i18n.changeLanguage('en')} aria-label="Switch to English">
-                <img src={gbFlag} alt="English" width="24" />
+              <!--  <img src={gbFlag} alt="English" width="24" /> -->
               </button>
             </div>
           </div>
