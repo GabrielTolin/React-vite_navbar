@@ -9,7 +9,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --gold: #d4af37;
 }
+
+
 
 
 a {
@@ -19,7 +22,7 @@ a {
 }
 
 a:hover {
-  color: #535bf2;
+  color: #1e40af;
 }
 
 

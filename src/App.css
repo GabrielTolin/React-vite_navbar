@@ -19,7 +19,8 @@ body.light {
 }
 
 body.light .main-content {
-  background-color: #ffffff;
+  background-color: #f9f9f9;
+  color: 1f1f1f;
 }
 
 /* Tema escuro */
@@ -29,8 +30,8 @@ body.dark {
 }
 
 body.dark .main-content {
-  background-color: #2b2828;
-  color: #f0f0f0;
+  background-color: #1f2937;
+  color: #f3f4f6;
 }
 
 body.dark a {
@@ -38,7 +39,7 @@ body.dark a {
 }
 
 body.dark a:hover {
-  color: #63b3ed;
+  color: #1e40af;
 }
 
 /* Estilos para as páginas */
@@ -56,3 +57,4 @@ body.dark .page {
   background-color: #2d2d2d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+

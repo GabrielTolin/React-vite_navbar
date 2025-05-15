@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import MobileMenu from "./MobileMenu"; 
+import MobileMenu from "./MobileMenu";
 import styles from "../styles/Navbar.module.css";
 import logo from '../img/logo.png';
 import i18n from '../i18n';
@@ -8,57 +8,66 @@ import ptFlag from '../img/pt.svg';
 import gbFlag from '../img/gb.svg';
 import { useTranslation } from "react-i18next";
 
-
-
-
 const Navbar = ({ toggleTheme, currentTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useTranslation();
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); 
+    setMenuOpen(!menuOpen);
   };
 
   const closeMenu = () => {
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
-
-  
-
 
   return (
     <>
       <nav className={`${styles.navbar} ${currentTheme === 'dark' ? styles.dark : ''}`}>
-        {/* Logo à esquerda */}
+        {/* Logo */}
         <div className={styles.logo}>
           <NavLink to="/" aria-label="Ir para a página Inicial">
             <img src={logo} alt="Logo" />
           </NavLink>
         </div>
 
-        {/* Links centralizados */}
+       
         <div className={`${styles.navCenter} ${menuOpen ? styles.mobileHide : ''}`}>
           <ul className={styles.navLinks}>
             <li>
-              <NavLink to="/" aria-label="Ir para a página Inicial" onClick={closeMenu} className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink }> {t("home")} </NavLink>
+              <NavLink 
+                to="/" 
+                onClick={closeMenu}
+                className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
+              >
+                {t("home")}
+              </NavLink>
             </li>
-            
             <li>
-              <NavLink to="/sobre" aria-label="Ir para a página Sobre a empresa" onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>{t("about")}</NavLink>
+              <NavLink 
+                to="/sobre" 
+                onClick={closeMenu}
+                className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
+              >
+                {t("about")}
+              </NavLink>
             </li>
-            
             <li>
-              <NavLink to="/contacto" aria-label="Ir para a página de contactos" onClick={closeMenu} className={({ isActive}) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}>{t("contacto")}</NavLink>
+              <NavLink 
+                to="/contacto" 
+                onClick={closeMenu}
+                className={({ isActive }) => isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
+              >
+                {t("contacto")}
+              </NavLink>
             </li>
           </ul>
         </div>
 
-        {/* CTAs e botão de tema à direita */}
         <div className={`${styles.navRight} ${menuOpen ? styles.mobileHide : ''}`}>
           <div className={styles.ctas}>
             <div className={styles.desktopCtas}>
-              <NavLink to="" aria-label="Fazer o Login no Website" className={styles.login}>{t("login")}</NavLink>
-              <NavLink to="" aria-label="Fazer o cadastro no Website" className={styles.signup}>{t("cadastre")}</NavLink>
+              <NavLink to="/login" className={styles.login}>{t("login")}</NavLink>
+              <NavLink to="/cadastro" className={styles.signup}>{t("cadastre")}</NavLink>
             </div>
             <button 
               onClick={toggleTheme} 
@@ -78,12 +87,12 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
           </div>
         </div>
 
-        {/* Menu hambúrguer */}
+        {/* Botão hamburger */}
         <button 
-          className={styles.hamburger} 
+          className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
           onClick={toggleMenu}
           aria-expanded={menuOpen}
-          aria-label="Menu"
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
         >
           <span className={styles.hamburgerLine}></span>
           <span className={styles.hamburgerLine}></span>
@@ -91,15 +100,13 @@ const Navbar = ({ toggleTheme, currentTheme }) => {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-  <MobileMenu 
-    closeMenu={closeMenu} 
-    toggleTheme={toggleTheme} 
-    currentTheme={currentTheme} 
-  />
-)}
-
+      {/* Menu Mobile */}
+      <MobileMenu 
+        isOpen={menuOpen}
+        closeMenu={closeMenu}
+        toggleTheme={toggleTheme}
+        currentTheme={currentTheme}
+      />
     </>
   );
 };

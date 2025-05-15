@@ -44,5 +44,12 @@
     "email" : "E-mail: ",
     "phone" : "Phone:",
     "howCanWeHelpYou" : "How can we help you?",
-    "submit" : "Submit"
+    "submit" : "Submit",
+    "typeName" : "Enter your name",
+    "typeEmail" : "Enter your email",
+    "typePhone" : "Enter your Phone",
+    "typePassW" : "Enter your Password",
+    "passWord" : "Password",
+    "createPW" : "Create your Password",
+    "signup" : "Sign Up"
 }

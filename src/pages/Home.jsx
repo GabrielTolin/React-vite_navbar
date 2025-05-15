@@ -7,6 +7,7 @@ const Home = () => {
 
     return (
         <div className='page-container'>
+            
             <h1>{t('bemVindo')}</h1>
             <h3>{t('ideas_come')}</h3>
             <section>

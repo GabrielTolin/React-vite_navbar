@@ -29,6 +29,7 @@ export const ContactForm = ({ onSubmit }) => {
           type="text"
           id="name"
           name="name"
+          placeholder={t("typeName")}
           value={formData.name}
           onChange={handleChange}
           required
@@ -40,7 +41,8 @@ export const ContactForm = ({ onSubmit }) => {
         <input
           type="email"
           id="email"
-          name="email"
+          name="email" 
+          placeholder={t("typeEmail")}
           value={formData.email}
           onChange={handleChange}
           required
@@ -53,6 +55,7 @@ export const ContactForm = ({ onSubmit }) => {
           type="tel"
           id="phone"
           name="phone"
+          placeholder={t("typePhone")}
           value={formData.phone}
           onChange={handleChange}
         />

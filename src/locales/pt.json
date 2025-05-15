@@ -41,9 +41,18 @@
     "login" : "Login",
     "cadastre" : "Cadastre-se",
     "name" : " Nome: ",
-    "email" : "E-mail:",
+    "email" : "Email:",
     "phone" : "Telefone:",
     "howCanWeHelpYou" : "Como Podemos te Ajudar?",
-    "submit" : "Enviar"
+    "submit" : "Enviar",
+    "typeName" : "Digite seu nome",
+    "typeEmail" : "Digite seu email",
+    "typePhone" : "Digite seu Telefone",
+    "typePassW" : "Digite sua senha",
+    "passWord" : "Senha",
+    "createPW" : "Crie sua Senha",
+    "signup" : "Cadastro"
+    
+
     
 }

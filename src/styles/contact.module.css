@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+  
   }
   
   .forms {
@@ -14,9 +15,13 @@
     width: 90%;
     max-width: 600px;
     margin-top: 2rem;
-    border: 2px solid black;
+    border: 2px solid #e5e7eb;
     border-radius: 10px;
+    background-color: #ffffff;
+    color: black;
+    
   }
+
   
   .contactForm {
     width: 50%;
@@ -34,6 +39,7 @@
   .formGroup label {
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: black;
   }
   
   .formGroup input,
@@ -42,6 +48,8 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
+    background-color: white;
+    color: black;
   }
   
   .submitBtn {

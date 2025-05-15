@@ -6,42 +6,29 @@ import ptFlag from '../img/pt.svg';
 import gbFlag from '../img/gb.svg';
 import i18n from '../i18n';
 
-const MobileMenu = ({ closeMenu, toggleTheme, currentTheme }) => {
-  const [closing, setClosing] = useState(false);
+const MobileMenu = ({ isOpen, closeMenu, toggleTheme, currentTheme }) => {
   const { t } = useTranslation();
-
-  const handleClose = () => {
-    setClosing(true);
-  };
-
-  useEffect(() => {
-    if (closing) {
-      const timeout = setTimeout(() => {
-        closeMenu();
-      }, 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [closing, closeMenu]);
-
-  // Aqui verificamos se o tema é "dark"
   const isDark = currentTheme === "dark";
 
   return (
     <>
-      <div className={styles.overlay} onClick={handleClose}></div>
+      {isOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={closeMenu}
+        />
+      )}
 
-      <nav className={`${styles.mobileMenu} ${closing ? styles.slideOut : ""} ${isDark ? styles.darkMenu : ""}`}>
-        <button className={styles.closeButton} onClick={handleClose} aria-label="Fechar menu">
-          &times;
-        </button>
-
+      <nav 
+        className={`${styles.mobileMenu} ${isOpen ? styles.open : ''} ${isDark ? styles.darkMenu : ''}`}
+      >
+       
         <div className={styles.navLinks}>
-          <Link to="/" onClick={handleClose} className={styles.navLink}>{t("home")}</Link>
-          <Link to="/sobre" onClick={handleClose} className={styles.navLink}>{t("about")}</Link>
-          <Link to="/contacto" onClick={handleClose} className={styles.navLink}>{t("contacto")}</Link>
+          <Link to="/" onClick={closeMenu} className={styles.navLink}>{t("home")}</Link>
+          <Link to="/sobre" onClick={closeMenu} className={styles.navLink}>{t("about")}</Link>
+          <Link to="/contacto" onClick={closeMenu} className={styles.navLink}>{t("contacto")}</Link>
         </div>
 
-        {/* Botão para alternar tema */}
         <button
           onClick={toggleTheme}
           className={styles.themeToggle}
@@ -49,6 +36,7 @@ const MobileMenu = ({ closeMenu, toggleTheme, currentTheme }) => {
         >
           {currentTheme === "light" ? "🌙" : "☀️"}
         </button>
+
         <div className={styles.languageSwitcher}>
           <button onClick={() => i18n.changeLanguage('pt')} aria-label="Mudar para português">
             <img src={ptFlag} alt="Português" />
@@ -59,8 +47,8 @@ const MobileMenu = ({ closeMenu, toggleTheme, currentTheme }) => {
         </div>
 
         <div className={styles.menuCtas}>
-          <Link to="/login" onClick={handleClose} className={styles.login}>{t("login")}</Link>
-          <Link to="/cadastro" onClick={handleClose} className={styles.signup}>{t("cadastre")}</Link>
+          <Link to="/login" onClick={closeMenu} className={styles.login}>{t("login")}</Link>
+          <Link to="/cadastro" onClick={closeMenu} className={styles.signup}>{t("cadastre")}</Link>
         </div>
       </nav>
     </>
