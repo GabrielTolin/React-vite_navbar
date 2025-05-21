@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Sobre from "./pages/Sobre";
-import Contacto from "./pages/Contacto";
-import Login from "./pages/login";
-import Cadastro from "./pages/cadastro";
+import Home from "./components/pages/Home";
+import Sobre from "./components/pages/Sobre";
+import Contacto from "./components/pages/Contacto";
+import Login from "./components/pages/login";
+import Cadastro from "./components/pages/cadastro";
 import "./App.css";
 
 function App() {

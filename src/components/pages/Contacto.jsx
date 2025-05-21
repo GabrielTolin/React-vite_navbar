@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next'; 
-import ContactForm from '../components/ContactForm';
-import styles from "../styles/contact.module.css";
+import ContactForm from '../../components/ContactForm';
+import styles from "../../styles/contact.module.css";
 
 const ContactPage = () => {
   const { t } = useTranslation(); 

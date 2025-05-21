@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 import styles from "../styles/Navbar.module.css";
-import logo from '../img/logo.png';
+import logo from '../assets/logo.png';
 import i18n from '../i18n';
-import ptFlag from '../img/pt.svg';
-import gbFlag from '../img/gb.svg';
+import ptFlag from '../assets/pt.svg';
+import gbFlag from '../assets/gb.svg';
 import { useTranslation } from "react-i18next";
 
 const Navbar = ({ toggleTheme, currentTheme }) => {

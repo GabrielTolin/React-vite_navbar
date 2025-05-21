@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/formpages.module.css";
+import styles from "../../styles/formpages.module.css";
 import { useTranslation } from "react-i18next";
 
 const Cadastro = () => {

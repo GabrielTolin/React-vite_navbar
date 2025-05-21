@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/MobileMenu.module.css";
 import { useTranslation } from 'react-i18next';
-import ptFlag from '../img/pt.svg';
-import gbFlag from '../img/gb.svg';
+import ptFlag from '../assets/pt.svg';
+import gbFlag from '../assets/gb.svg';
 import i18n from '../i18n';
 
 const MobileMenu = ({ isOpen, closeMenu, toggleTheme, currentTheme }) => {
